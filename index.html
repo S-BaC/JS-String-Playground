@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS String Playground</title>
     <link rel="stylesheet" href="style.css">
-    <script defer href="script.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
     <!-- Top: Header -->
@@ -16,25 +16,31 @@
         <a>Train</a>
         <a>Docs</a>
     </div>
-    <!-- Middle 1: Display and Methods -->
-    <div class="mid1">
+    <!-- Middle 1: Methods -->
+    <div class="mid">
         <div class="display">
-            <p>INPUT:<span id="inputType">STRING</span></p>
-            <div class="screen">
+            <div class="screenWrapper">
+                <div class="screen scrTop">
+                    <div class="scrTxt"> INPUT:<span id="inputType">STRING</span> </div>
+                </div>
                 <div class="scrDisplay"> Hello World </div>
-                <button class="scrBtn"><img class="disImg" src="icons/arrow-right.png"></button>
             </div>
-            <p>CODE</p>
-            <div class="screen">
-                <div class="scrDisplay"><span id="codeInput">"Hello World".indexOf(2)</span></div>
-                <button class="scrBtn"><img class="disImg" src="icons/arrow-right.png"></button>
+            <div class="screenWrapper">
+                <div class="screen">
+                    <div class="scrTxt"> CODE:</div>
+                </div>
+                <div class="scrDisplay"> "Hello World".charAt(6) </div>
             </div>
-            <p>RESULT</p>
-            <div class="screen">
-                <div class="scrDisplay"> <span id="codeOutput">l</span> </div>
-                <button class="scrBtn"><img class="disImg" src="icons/rotate-left-circular-arrow-interface-symbol.png"></button>
+            <div class="screenWrapper">
+                <div class="screen">
+                    <div class="scrTxt"> RESULT:</div>
+                </div>
+                <div class="scrDisplay"> W </div>
             </div>
         </div>
+
+        <div class="midWrapper">
+        <div class="mid1">
         <div class="methods">
             <!-- Methods grouped by the type of their inputs -->
             <div class="int methodGroup">
@@ -64,11 +70,64 @@
                 </div>
             </div>
         </div>
+        </div>
+        <!-- Middle 2: Keyboard -->
+        <div class="mid2">
+            <div class="keys">
+                <div class="keyRow">
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                </div>
+                <div class="keyRow">
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                </div>
+                <div class="keyRow">
+                    <div class="key keyL keySpecial"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL"></div>
+                    <div class="key keyL keySpecial"></div>
+                    <div class="key keyL keyRun"></div>
+                </div>
+                <div class="keyRow">
+                    <div class="key keyN"></div>
+                    <div class="key keyN"></div>
+                    <div class="key keyN"></div>
+                    <div class="key keyN"></div>
+                    <div class="key keyN"></div>
+                    <div class="key keySpace"></div>
+                    <div class="key keyN"></div>
+                    <div class="key keyN"></div>
+                    <div class="key keyN"></div>
+                    <div class="key keyN"></div>
+                    <div class="key keyN"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Middle 2: Keyboard -->
-    <div class="mid2">
 
     </div>
+
     <!-- Bottom: Sourcecode and Contact -->
     <!-- <div class="bot">
         <p> This is gonna be the footer </p>
