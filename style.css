@@ -1,0 +1,116 @@
+:root{
+    --primaryColor:#eee;
+    --secondaryColor: #323330;
+    --accentColor1:#F0DB4F;
+    --accentColor2:#706B47;
+    --otherColor1:#F2E699;
+    --otherColor2:#C8CCC0;
+}
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:var(--primaryColor);
+    color:var(--secondaryColor);
+    margin:0px;
+}
+
+/* HEADER */
+.top{
+    display:flex;
+    align-items: baseline;
+    padding: 0px 15px;
+    background-color: var(--secondaryColor);
+    color:var(--otherColor1);
+}
+.logo{
+    font-size: 2rem;
+    color: var(--accentColor1);
+    padding:0px 20px;
+}
+a:first-of-type{margin-left: auto;}
+a{padding-right:max(5vw,30px); }
+a:hover{cursor:pointer;}
+
+/* DISPLAY */
+.mid1{
+    margin:2vh 10px;
+    display:flex;
+    gap:10px;
+}
+.display{
+    width:25%;
+    flex:1 1 auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap:5px;
+}
+.display p{
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-bottom:0px;
+}
+#inputType{
+    font-size: 1rem;
+    color:var(--secondaryColor);
+    padding-left:10px;
+}
+.screen{
+    width:100%;
+    height:max(5vh,10px);
+    background-color: var(--secondaryColor);
+    color:var(--accentColor1);
+    display:flex;
+    text-align: center;
+    font-size: 16px;
+    border-radius:5px;
+}
+.scrDisplay{width:80%;overflow-x: hidden;
+display:flex; justify-content: center;
+align-items: center;}
+.scrBtn{
+    width:20%;background-color:var(--primaryColor);
+    border:3px solid var(--secondaryColor);border-radius: 5px;}
+.disImg{height:80%; color:white;}
+
+.methods{
+    width:70%;
+    flex:1 1 auto;
+    display:flex;
+    gap:10px;
+    height: auto;
+    padding:0px;
+}
+.methodGroup{
+    flex:1 1 auto;
+    height:100%;
+    width:25%;
+    border-radius: 10px;
+    background-color: var(--otherColor1);
+    box-shadow: 0px 0px 5px var(--accentColor2);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2vh;
+    padding:10px;
+
+}
+.methodGroup>h5{
+    font-size: 1rem;
+    margin:2vh 0px;
+    text-align: center;}
+.methodWrapper{
+    display:flex;
+    gap:1vw;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.methodBtn{
+    font-size: 3vh;
+    border:none;
+    border-radius: 10px;
+    padding:5px;
+    margin:3px;
+    background-color: var(--accentColor1);
+    box-shadow: 0px 0px 3px var(--accentColor2);
+    color:var(--accentColor2);
+}

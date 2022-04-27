@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS String Playground</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer href="script.js"></script>
+</head>
+<body>
+    <!-- Top: Header -->
+    <div class="top">
+        <h3><span class='logo'>JS</span> String Playground</h3>
+        <a>Play</a>
+        <a>Train</a>
+        <a>Docs</a>
+    </div>
+    <!-- Middle 1: Display and Methods -->
+    <div class="mid1">
+        <div class="display">
+            <p>INPUT:<span id="inputType">STRING</span></p>
+            <div class="screen">
+                <div class="scrDisplay"> Hello World </div>
+                <button class="scrBtn"><img class="disImg" src="icons/arrow-right.png"></button>
+            </div>
+            <p>CODE</p>
+            <div class="screen">
+                <div class="scrDisplay"><span id="codeInput">"Hello World".indexOf(2)</span></div>
+                <button class="scrBtn"><img class="disImg" src="icons/arrow-right.png"></button>
+            </div>
+            <p>RESULT</p>
+            <div class="screen">
+                <div class="scrDisplay"> <span id="codeOutput">l</span> </div>
+                <button class="scrBtn"><img class="disImg" src="icons/rotate-left-circular-arrow-interface-symbol.png"></button>
+            </div>
+        </div>
+        <div class="methods">
+            <!-- Methods grouped by the type of their inputs -->
+            <div class="int methodGroup">
+                <h5>Integers as args</h5>
+                <div class="methodWrapper">
+                    <button class="methodBtn">charAt()</button>
+                    <button class="methodBtn">charCodeAt()</button>
+                </div>
+            </div>
+            <div class="str methodGroup">
+                <h5>Strings as args</h5>
+                <div class="methodWrapper">
+                    <button class="methodBtn">includes()</button>
+                    <button class="methodBtn">indexOf()</button>
+                    <button class="methodBtn">lastIndexOf()</button>
+                    <button class="methodBtn">startsWith()</button>
+                    <button class="methodBtn">endWith()</button>
+                </div>
+                
+            </div>
+            <div class="void methodGroup">
+                <h5>No args</h5>
+                <div class="methodWrapper">
+                    <button class="methodBtn">toUpperCase()</button>
+                    <button class="methodBtn">toLowerCase()</button>
+                    <button class="methodBtn">trim()</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Middle 2: Keyboard -->
+    <div class="mid2">
+
+    </div>
+    <!-- Bottom: Sourcecode and Contact -->
+    <!-- <div class="bot">
+        <p> This is gonna be the footer </p>
+    </div> -->
+</body>
+</html>
