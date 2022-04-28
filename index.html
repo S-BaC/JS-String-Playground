@@ -24,26 +24,26 @@
             <div class="int methodGroup">
                 <h5>Integers as args</h5>
                 <div class="methodWrapper">
-                    <button class="methodBtn">charAt()</button>
-                    <button class="methodBtn">charCodeAt()</button>
+                    <button class="methodBtn" onclick="methodArg('charAt')">charAt()</button>
+                    <button class="methodBtn" onclick="methodArg('charCodeAt')">charCodeAt()</button>
                 </div>
             </div>
             <div class="str methodGroup">
                 <h5>Strings as args</h5>
                 <div class="methodWrapper">
-                    <button class="methodBtn">includes()</button>
-                    <button class="methodBtn">indexOf()</button>
-                    <button class="methodBtn">lastIndexOf()</button>
-                    <button class="methodBtn">startsWith()</button>
-                    <button class="methodBtn">endWith()</button>
+                    <button class="methodBtn" onclick="methodArg('includes')">includes()</button>
+                    <button class="methodBtn" onclick="methodArg('indexOf')">indexOf()</button>
+                    <button class="methodBtn" onclick="methodArg('lastIndexOf')">lastIndexOf()</button>
+                    <button class="methodBtn" onclick="methodArg('startsWith')">startsWith()</button>
+                    <button class="methodBtn" onclick="methodArg('endsWith')">endsWith()</button>
                 </div>
             </div>
             <div class="void methodGroup">
                 <h5>No args</h5>
                 <div class="methodWrapper">
-                    <button class="methodBtn">toUpperCase()</button>
-                    <button class="methodBtn">toLowerCase()</button>
-                    <button class="methodBtn">trim()</button>
+                    <button class="methodBtn" onclick="methodVoid('toUpperCase')">toUpperCase()</button>
+                    <button class="methodBtn" onclick="methodVoid('toLowerCase')">toLowerCase()</button>
+                    <button class="methodBtn" onclick="methodVoid('trim')">trim()</button>
                 </div>
             </div>
         </div>
@@ -54,17 +54,16 @@
             <div class="screenWrapper">
                 <div class="scrTxt"> <p>INPUT</p></div>
                 <div class="scrDisplay">
-                     <p class="scrDisplayTop">Hello World</p>
-
+                     <p class="scrDisplayTop" id="scrInput"></p>
                 </div>
             </div>
             <div class="screenWrapper">
-                <div class="scrTxt"> CODE</div>
-                <div class="scrDisplay"> "Hello World".charAt(6) </div>
+                <div class="scrTxt"> CODE </div>
+                <div class="scrDisplay" id="scrCode"> Please Type &#8593; </div>
             </div>
             <div class="screenWrapper">
                 <div class="scrTxt"> RESULT</div>
-                <div class="scrDisplay"> W </div>
+                <div class="scrDisplay" id="scrResult"> (Result will be shown here) </div>
             </div>    
         </div>
 
@@ -72,52 +71,52 @@
         <div class="mid2">
             <div class="keys">
                 <div class="keyRow">
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
                 </div>
                 <div class="keyRow">
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
                 </div>
                 <div class="keyRow">
-                    <div class="key keyL keySpecial"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL"></div>
-                    <div class="key keyL keySpecial"></div>
-                    <div class="key keyL keyRun"></div>
+                    <div class="key keyL keySpecial" onclick="pressed('caps')"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL" onclick="pressed(this)"></div>
+                    <div class="key keyL keySpecial" onclick="pressed('clear')"></div>
+                    <div class="key keyL keyRun" onclick="pressed('run')"></div>
                 </div>
                 <div class="keyRow">
-                    <div class="key keyN"></div>
-                    <div class="key keyN"></div>
-                    <div class="key keyN"></div>
-                    <div class="key keyN"></div>
-                    <div class="key keyN"></div>
-                    <div class="key keySpace"></div>
-                    <div class="key keyN"></div>
-                    <div class="key keyN"></div>
-                    <div class="key keyN"></div>
-                    <div class="key keyN"></div>
-                    <div class="key keyN"></div>
+                    <div class="key keyN" onclick="pressed(this)"></div>
+                    <div class="key keyN" onclick="pressed(this)"></div>
+                    <div class="key keyN" onclick="pressed(this)"></div>
+                    <div class="key keyN" onclick="pressed(this)"></div>
+                    <div class="key keyN" onclick="pressed(this)"></div>
+                    <div class="key keySpace" onclick="pressed(this)" ></div>
+                    <div class="key keyN" onclick="pressed(this)"></div>
+                    <div class="key keyN" onclick="pressed(this)"></div>
+                    <div class="key keyN" onclick="pressed(this)"></div>
+                    <div class="key keyN" onclick="pressed(this)"></div>
+                    <div class="key keyN" onclick="pressed(this)"></div>
                 </div>
             </div>
         </div>

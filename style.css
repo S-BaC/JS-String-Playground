@@ -109,12 +109,11 @@ a:hover{cursor:pointer; text-decoration: underline;}
 } */
 .screenWrapper{
     display:flex;
-    justify-content: center;
     align-items: center;
     width:40vw;
     gap:3vw;}
 .scrTxt{
-    flex:0 1 auto;
+    flex:0 0 auto;
     height:30px;
     width:100px;
     font-size: min(1.2rem,2vw);
