@@ -1,23 +1,14 @@
+/*
+    - Program to play around with (some of) JS String methods.
+    - Both virtual and physical keyboards can be used.
 
-// THE KEYBOARD
-const keysNL = document.getElementsByClassName('key');
-const keysArr = Array.from(keysNL);   //Converting the node list to an array so that Array methods can be used.
-let qwerty = [  'q','w','e','r','t','y','u','i','o','p',
-                'a','s','d','f','g','h','j','k','l',
-                'Caps','z','x','c','v','b','n','m','Clear','Run',
-                '1','2','3','4','5',' ','6','7','8','9','0'];
-let capStatus = -1; // -1 = small letters, 1 = capital letters.
+*/
 
-function fillKeys(){
-    for(let i = 0; i<keysArr.length; i++){
-        keysArr[i].innerHTML = qwerty[i];
-    }}
-
-//THE METHODS
+// 1. THE METHODS
 const methodsNL = document.getElementsByClassName('methodBtn');
 const methodsArr = Array.from(methodsNL);
 
-//Methods with args:
+// 1.1. Methods with args:
 let methodsArg = {
     charAt: function(word, arg){return word.charAt(arg);},
     charCodeAt: function(word, arg){return word.charCodeAt(arg);},
@@ -27,27 +18,43 @@ let methodsArg = {
     startsWith: function(word, arg){return word.startsWith(arg);},
     endsWith: function(word, arg){return word.endsWith(arg);}
 }
-//Methods with no args:
+// 1.2. Methods with no args:
 let methodsVoid = {
     toUpperCase: function(word){return word.toUpperCase()},
     toLowerCase: function(word){return word.toLowerCase()},
     trim:        function(word){return word.trim()}
 } 
-let methodNameGlobal; // To be used in run()
-let scrArg = ""; // To be used in run()
-// DISPLAY SCREEN
 
-// Display Text:
+// 2. DISPLAY SCREEN
+
+// 2.1. Display Text:
 const scrInput = document.getElementById('scrInput');
 const scrCode = document.getElementById('scrCode');
 const scrResult = document.getElementById('scrResult');
 
-//TYPING
-let condition = 0; //0 = start, 1 = methods added.
+// 3. THE KEYBOARD
+
+// 3.1. Virtual on-screen keyboard
+const keysNL = document.getElementsByClassName('key');
+const keysArr = Array.from(keysNL);   //Converting the node list to an array so that Array methods can be used.
+let qwerty = [  'q','w','e','r','t','y','u','i','o','p',
+                'a','s','d','f','g','h','j','k','l',
+                'Caps','z','x','c','v','b','n','m','Clear','Run',
+                '1','2','3','4','5',' ','6','7','8','9','0'];
+
+function fillKeys(){
+    for(let i = 0; i<keysArr.length; i++){
+        keysArr[i].innerHTML = qwerty[i];
+    }}
+
+// 3.2. Physical keyboard 
+document.addEventListener('keydown',e => keydownEvent(e));
+
+// 3.3. Keyboard Events
 
 // Function for when a method is pressed:
 function methodArg(methodName){
-    condition = 1
+    condition = 1;
     methodNameGlobal = methodName;
     scrCode.textContent = scrInput.textContent + '.' + methodName + '(';
     scrResult.textContent = "Please insert the argument and press Run.";
@@ -61,30 +68,42 @@ function methodVoid(methodName){
 // Function for when a key is pressed:
 function pressed(key){
     let keyIndex = keysArr.indexOf(key);
-    
+    let keyToAdd = qwerty[keyIndex];
+    addKeys(key, keyToAdd);
+    //'key' is the argument sent from DOM, 'keyToAdd' is its equivalent qwerty character.
+    //They are separated so that we don't need to write 'CapsLock' on the virtual keyboard.
+    //These two values would be the same, however, for keydownEvent. 
+}
+
+function keydownEvent(e) {
+    console.log(e.key);
+    addKeys(e.key, e.key);
+}
+
+function addKeys(key, keyToAdd){
+
     //For Special keys:
-    if(key === 'caps'){
+    if(key === 'CapsLock'){
         capKey();
     }
-    else if(key === 'clear'){
+    else if(key === 'Backspace'){
         location.reload();
     }
-    else if(key === 'run'){
+    else if(key === 'Enter'){
         run();
     }
-    //At the start:
+    //For Alphanumeric
     else{
         //At the start:
         if(condition === 0){
-            scrInput.textContent += qwerty[keyIndex];
+            scrInput.textContent += keyToAdd;
         }
         //For Methods withArgs:
         else if (condition === 1){
-            scrCode.textContent += qwerty[keyIndex];
-            scrArg += qwerty[keyIndex];
+            scrCode.textContent += keyToAdd;
+            scrArg += keyToAdd;
         }
     }
-
 }
 
 //When 'cap' key is pressed:
@@ -103,15 +122,22 @@ function capKey(){
     capStatus *= -1;
     fillKeys();
 }
+
 //When 'run' key is pressed:
 function run(){
     if(condition === 1){
     scrCode.textContent += ')';
-    console.log(scrInput.textContent, scrArg);
     scrResult.textContent = methodsArg[methodNameGlobal](scrInput.textContent, scrArg);
     condition = 2;}
+    else{console.log("ERROR: condition not 1.");}
 }
-//PROGRAM INITIATION
-scrInput.textContent = "";
-fillKeys();
 
+// 0. Program Initialization
+
+fillKeys();
+let methodNameGlobal; // To be used in run()
+let scrArg = ""; // To be used in run()
+
+// Conditions
+let capStatus = -1; // -1 = small letters, 1 = capital letters.
+let condition = 0; //0 = start, 1 = methods added, 2 = program completed.
